@@ -1,7 +1,7 @@
 import React, {useReducer, useState}from 'react'
 
 const ACTIONS ={
-
+ADD_TODO: 'add-todo'
 }
 
 const reducer= (state, action)=>{
@@ -13,11 +13,13 @@ function App() {
   const [todos, dispatch] = useReducer(reducer, [])
   const [name, setName] = useState('')
 
-
-  const handleSubmit =()=>{
-
+console.log("type user", name)
+  const handleSubmit =(e)=>{
+    e.eventPrevent()
+    dispatch({type:ACTIONS.ADD_TODO})
+    setName('')
   }
-  
+
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
