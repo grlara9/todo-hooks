@@ -4,27 +4,35 @@ const ACTIONS ={
 ADD_TODO: 'add-todo'
 }
 
-const reducer= (state, action)=>{
+const reducer= (todos, action)=>{
+  switch (action.type){
+    case ACTIONS.ADD_TODO:
+      return [...todos, newTodo(todo)]
+  }
+}
+
+const newTodo = () => {
 
 }
 
 function App() {
 
   const [todos, dispatch] = useReducer(reducer, [])
-  const [name, setName] = useState('')
+  const [todo, setTodo] = useState('')
 
 console.log("type user", name)
   const handleSubmit =(e)=>{
     e.eventPrevent()
     dispatch({type:ACTIONS.ADD_TODO})
-    setName('')
+    setTodo('')
   }
 
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
-        <input type="text" value={name} onChange= {e => setName(e.target.value)}  />
+        <input type="text" value={todo} onChange= {e => setTodo(e.target.value)}  />
         <button type="submit">Submit</button>
+
 
       
       </form>
