@@ -4,6 +4,7 @@ const ACTIONS ={
 ADD_TODO: 'add-todo'
 }
 
+//reducer contains all logic for modifying our state
 const reducer= (todos, action)=>{
   switch (action.type){
     case ACTIONS.ADD_TODO:
@@ -12,8 +13,9 @@ const reducer= (todos, action)=>{
 }
 
 const newTodo = () => {
-
+  return {id: Date.now() , name: todo, completed: false}
 }
+
 
 function App() {
 
