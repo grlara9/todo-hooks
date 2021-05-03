@@ -8,7 +8,7 @@ ADD_TODO: 'add-todo'
 const reducer= (todos, action)=>{
   switch (action.type){
     case ACTIONS.ADD_TODO:
-      return [...todos, newTodo(todo)]
+      return [...todos, newTodo(action.payload.todo)]
   }
 }
 
@@ -22,10 +22,11 @@ function App() {
   const [todos, dispatch] = useReducer(reducer, [])
   const [todo, setTodo] = useState('')
 
-console.log("type user", name)
+console.log("type user", todo)
+
   const handleSubmit =(e)=>{
     e.eventPrevent()
-    dispatch({type:ACTIONS.ADD_TODO})
+    dispatch({type:ACTIONS.ADD_TODO, payload: {name: todo}})
     setTodo('')
   }
 
