@@ -1,5 +1,5 @@
 import React, {useReducer, useState} from 'react'
-
+import Todos from './components/Todos'
 const ACTIONS ={
 ADD_TODO: 'add-todo'
 }
@@ -42,6 +42,13 @@ console.log("hola", name)
         <input type="text" value={name} 
         onChange= {e => setName(e.target.value)}  />
       </form>
+
+      {todos.map(todo => {
+        return (
+          
+          <Todos id={todo.id}/>
+        )
+      })}
     </div>
   );
 }
