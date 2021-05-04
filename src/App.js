@@ -1,4 +1,4 @@
-import React, {useReducer, useState}from 'react'
+import React, {useReducer, useState} from 'react'
 
 const ACTIONS ={
 ADD_TODO: 'add-todo'
@@ -8,36 +8,39 @@ ADD_TODO: 'add-todo'
 const reducer= (todos, action)=>{
   switch (action.type){
     case ACTIONS.ADD_TODO:
-      return [...todos, newTodo(action.payload.todo)]
+     return [...todos, newTodo(action.payload.name)]
+      default:
+       return todos
   }
 }
 
-const newTodo = () => {
-  return {id: Date.now() , name: todo, completed: false}
-}
+const newTodo = (name) => {
+  return { id: Date.now() , 
+            name: name, 
+            complete: false}
+        }
 
 
 function App() {
-
+  const [name, setName] = useState('')
   const [todos, dispatch] = useReducer(reducer, [])
-  const [todo, setTodo] = useState('')
-
-console.log("type user", todo)
+  
+console.log("hola", name)
 
   const handleSubmit =(e)=>{
-    e.eventPrevent()
-    dispatch({type:ACTIONS.ADD_TODO, payload: {name: todo}})
-    setTodo('')
+    e.preventDefault()
+    dispatch({ type: ACTIONS.ADD_TODO, payload: {name: name}})
+    setName('')
   }
+  
 
+
+  console.log(todos)
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
-        <input type="text" value={todo} onChange= {e => setTodo(e.target.value)}  />
-        <button type="submit">Submit</button>
-
-
-      
+        <input type="text" value={name} 
+        onChange= {e => setName(e.target.value)}  />
       </form>
     </div>
   );
