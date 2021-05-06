@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Todos =()=> {
+const Todos =({id, name})=> {
     return(
-        <h1>hola</h1>
+        <div>
+            {name}
+
+        </div>
     )
 }
 

@@ -46,7 +46,9 @@ console.log("hola", name)
       {todos.map(todo => {
         return (
           
-          <Todos id={todo.id}/>
+          <Todos id={todo.id}
+          name={todo.name}
+          />
         )
       })}
     </div>
