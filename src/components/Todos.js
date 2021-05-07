@@ -1,10 +1,10 @@
 import React from 'react'
-
-const Todos =({id, name})=> {
+import {ACTIONS } from '../App'
+const Todos =({todo, dispatch, id, name})=> {
     return(
         <div>
             {name}
-
+                <button onClick={()=> dispatch({ type: ACTIONS.TOOGLE_TODO, payload:{id: id} })}>Completed </button>
         </div>
     )
 }

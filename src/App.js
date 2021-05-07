@@ -1,7 +1,9 @@
 import React, {useReducer, useState} from 'react'
 import Todos from './components/Todos'
-const ACTIONS ={
-ADD_TODO: 'add-todo'
+
+export const ACTIONS ={
+ADD_TODO: 'add-todo',
+TOOGLE_TODO: 'toogle-todo'
 }
 
 //reducer contains all logic for modifying our state
@@ -9,6 +11,7 @@ const reducer= (todos, action)=>{
   switch (action.type){
     case ACTIONS.ADD_TODO:
      return [...todos, newTodo(action.payload.name)]
+     case ACTIONS.TOOGLE_TODO: 
       default:
        return todos
   }
