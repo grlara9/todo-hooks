@@ -15,7 +15,7 @@ const reducer= (todos, action)=>{
      case ACTIONS.TOOGLE_TODO: 
 
      case ACTIONS.DELETE_TODO:
-       
+       return todos.filter(todo => todo.id !== action.payload.id)
       default:
        return todos
   }
@@ -55,6 +55,7 @@ console.log("hola", name)
           
           <Todos id={todo.id}
           name={todo.name}
+          dispatch={dispatch}
           />
         )
       })}
