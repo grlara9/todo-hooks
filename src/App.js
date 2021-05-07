@@ -53,6 +53,7 @@ console.log("hola", name)
       <form onSubmit={handleSubmit}>
         <input type="text" value={name} 
         onChange= {e => setName(e.target.value)}  />
+        <button type="submit">TODO</button>
       </form>
 
       {todos.map(todo => {
