@@ -12,8 +12,13 @@ const reducer= (todos, action)=>{
   switch (action.type){
     case ACTIONS.ADD_TODO:
      return [...todos, newTodo(action.payload.name)]
-     case ACTIONS.TOOGLE_TODO: 
 
+     case ACTIONS.TOOGLE_TODO: 
+      return todos.map(todo =>{
+        if(todo.id === action.payload.id){
+          return {... todo, complete: !todo.complete}
+        }
+      })
      case ACTIONS.DELETE_TODO:
        return todos.filter(todo => todo.id !== action.payload.id)
       default:
@@ -55,6 +60,7 @@ console.log("hola", name)
           
           <Todos id={todo.id}
           name={todo.name}
+          complete={todo.complete}
           dispatch={dispatch}
           />
         )
