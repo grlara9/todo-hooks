@@ -3,7 +3,8 @@ import Todos from './components/Todos'
 
 export const ACTIONS ={
 ADD_TODO: 'add-todo',
-TOOGLE_TODO: 'toogle-todo'
+TOOGLE_TODO: 'toogle-todo',
+DELETE_TODO: 'delete-todo'
 }
 
 //reducer contains all logic for modifying our state
@@ -12,6 +13,9 @@ const reducer= (todos, action)=>{
     case ACTIONS.ADD_TODO:
      return [...todos, newTodo(action.payload.name)]
      case ACTIONS.TOOGLE_TODO: 
+
+     case ACTIONS.DELETE_TODO:
+       
       default:
        return todos
   }
