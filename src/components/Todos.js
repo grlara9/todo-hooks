@@ -3,7 +3,8 @@ import {ACTIONS } from '../App'
 const Todos =({todo, dispatch, id, name, complete})=> {
     return(
         <div>
-            <span style={{color : complete ? '#AAA' : '#000'}}>
+            <span style={{textDecoration : complete ? 'line-through'  : '', color: complete ? '#AAA': '#000'}}
+           >
 
             {name}
             </span>
