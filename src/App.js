@@ -52,7 +52,7 @@ console.log("hola", name)
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
-        <input type="text" value={name} 
+        <input type="text" value={name}  placeholder="Todo"
         onChange= {e => setName(e.target.value)}  />
         <button type="submit">TODO</button>
       </form>
