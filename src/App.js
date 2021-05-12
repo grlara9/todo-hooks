@@ -1,5 +1,6 @@
 import React, {useReducer, useState} from 'react'
 import Todos from './components/Todos'
+import './App.css'
 
 export const ACTIONS ={
 ADD_TODO: 'add-todo',
@@ -49,7 +50,7 @@ console.log("hola", name)
 
   console.log(todos)
   return (
-    <div className="App">
+    <div className="container">
       <form onSubmit={handleSubmit}>
         <input type="text" value={name} 
         onChange= {e => setName(e.target.value)}  />
@@ -58,11 +59,11 @@ console.log("hola", name)
 
       {todos.map(todo => {
         return (
-          
-          <Todos id={todo.id}
-          name={todo.name}
-          complete={todo.complete}
-          dispatch={dispatch}
+          <Todos 
+            id={todo.id}
+            name={todo.name}
+            complete={todo.complete}
+            dispatch={dispatch}
           />
         )
       })}
