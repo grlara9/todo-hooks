@@ -17,5 +17,11 @@ html{
 
 form{
   margin: 0 auto;
+  
+}
+
+form input{
+  border: none;
+  border-bottom: 1px solid black;
 }
 

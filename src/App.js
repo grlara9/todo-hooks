@@ -55,7 +55,7 @@ console.log("hola", name)
       <form onSubmit={handleSubmit}>
         <input type="text" value={name}  placeholder="Todo"
         onChange= {e => setName(e.target.value)}  />
-        <AddCircleOutlineOutlinedIcon type="submit" />
+<button type="submit"><AddCircleOutlineOutlinedIcon /> </button>
       </form>
 
       {todos.map(todo => {
