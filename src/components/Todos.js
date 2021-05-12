@@ -1,6 +1,7 @@
 import React from 'react'
 import {ACTIONS } from '../App'
 import CheckCircleOutlineOutlinedIcon from '@material-ui/icons/CheckCircleOutlineOutlined';
+import HighlightOffOutlinedIcon from '@material-ui/icons/HighlightOffOutlined';
 import './Todos.css';
 
 const Todos =({todo, dispatch, id, name, complete})=> {
@@ -11,9 +12,9 @@ const Todos =({todo, dispatch, id, name, complete})=> {
 
             {name}
             </span>
-                <button onClick={()=> dispatch({ type: ACTIONS.TOOGLE_TODO, payload:{id: id} })}> <CheckCircleOutlineOutlinedIcon /> </button>
+                <CheckCircleOutlineOutlinedIcon onClick={()=> dispatch({ type: ACTIONS.TOOGLE_TODO, payload:{id: id} })}  /> 
 
-                <button onClick={()=> dispatch({ type: ACTIONS.DELETE_TODO, payload:{id: id} })}> Deleted </button>
+                <HighlightOffOutlinedIcon  onClick={()=> dispatch({ type: ACTIONS.DELETE_TODO, payload:{id: id} })} /> 
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import React, {useReducer, useState} from 'react'
 import Todos from './components/Todos'
+import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import './App.css'
 
 export const ACTIONS ={
@@ -54,7 +55,7 @@ console.log("hola", name)
       <form onSubmit={handleSubmit}>
         <input type="text" value={name}  placeholder="Todo"
         onChange= {e => setName(e.target.value)}  />
-        <button type="submit">TODO</button>
+        <AddCircleOutlineOutlinedIcon type="submit" />
       </form>
 
       {todos.map(todo => {
