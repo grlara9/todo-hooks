@@ -12,9 +12,11 @@ const Todos =({todo, dispatch, id, name, complete})=> {
 
             {name}
             </span>
-                <CheckCircleOutlineOutlinedIcon onClick={()=> dispatch({ type: ACTIONS.TOOGLE_TODO, payload:{id: id} })}  /> 
+            
+                <CheckCircleOutlineOutlinedIcon style={{fontSize:'16px'}} onClick={()=> dispatch({ type: ACTIONS.TOOGLE_TODO, payload:{id: id} })}  /> 
 
                 <HighlightOffOutlinedIcon  onClick={()=> dispatch({ type: ACTIONS.DELETE_TODO, payload:{id: id} })} /> 
+               
         </div>
     )
 }

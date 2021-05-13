@@ -17,11 +17,25 @@ html{
 
 form{
   margin: 0 auto;
-  
+  padding: 12px;
 }
 
 form input{
   border: none;
-  border-bottom: 1px solid black;
+  color: black;
+  width: 330px;
+  height: 33px;
+  font-size: 1.5em;
+  outline: 0;
+  background: #fff;
 }
 
+button{
+  font-size: 1.5em;
+  background: #fff;
+  border:none;
+  outline: 0;
+  height: 35px;
+  width: 40px;
+  
+}
