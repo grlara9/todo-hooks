@@ -55,19 +55,22 @@ console.log("hola", name)
       <form onSubmit={handleSubmit}>
         <input type="text" value={name}  placeholder="Todo"
         onChange= {e => setName(e.target.value)}  />
-<button type="submit"><AddCircleOutlineOutlinedIcon style={{fontSize: 22}}/> </button>
+    <button type="submit"><AddCircleOutlineOutlinedIcon style={{fontSize: 22}}/> </button>
       </form>
-
+  
       {todos.map(todo => {
         return (
+          <div className="todos">
           <Todos 
             id={todo.id}
             name={todo.name}
             complete={todo.complete}
             dispatch={dispatch}
           />
+        </div>
         )
       })}
+      
     </div>
   );
 }
