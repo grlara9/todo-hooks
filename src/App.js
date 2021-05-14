@@ -52,6 +52,7 @@ console.log("hola", name)
   console.log(todos)
   return (
     <div className="container">
+      <h2>My To-Do-list</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" value={name}  placeholder="Todo"
         onChange= {e => setName(e.target.value)}  />

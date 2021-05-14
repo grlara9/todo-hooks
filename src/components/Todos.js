@@ -7,16 +7,13 @@ import './Todos.css';
 const Todos =({todo, dispatch, id, name, complete})=> {
     return(
         <div className="todo">
-         
+             <span style={{textDecoration : complete ? 'line-through'  : '', color: complete ? '#AAA': '#000'}}>{name}</span>
             
-                <CheckCircleOutlineOutlinedIcon style={{color: 'green'}} onClick={()=> dispatch({ type: ACTIONS.TOOGLE_TODO, payload:{id: id} })}  /> 
+                <CheckCircleOutlineOutlinedIcon style={{color: 'green', float:'right', paddingLeft: '2px', fontSize:'1.2em'}} onClick={()=> dispatch({ type: ACTIONS.TOOGLE_TODO, payload:{id: id} })}  /> 
 
-                <HighlightOffOutlinedIcon style={{color: 'red'}}  onClick={()=> dispatch({ type: ACTIONS.DELETE_TODO, payload:{id: id} })} /> 
+                <HighlightOffOutlinedIcon style={{color: 'red', float:'right', fontSize:'1.2em'}}  onClick={()=> dispatch({ type: ACTIONS.DELETE_TODO, payload:{id: id} })} /> 
               
-                <span style={{textDecoration : complete ? 'line-through'  : '', color: complete ? '#AAA': '#000'}}>
-
-{name}
-</span>
+            
         </div>
     )
 }
