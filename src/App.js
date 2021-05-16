@@ -55,6 +55,9 @@ console.log("hola", name)
       <h2>My To-Do-list</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" value={name}  placeholder="Todo"
+          onMouseOver={({target})=>target.style.color='darkgray'} 
+          onMouseOut={({target})=>target.style.color='black'}
+        
         onChange= {e => setName(e.target.value)}  />
     <button type="submit"><AddCircleOutlineOutlinedIcon style={{fontSize: 22}}/> </button>
       </form>
