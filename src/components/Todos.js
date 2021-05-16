@@ -4,7 +4,7 @@ import CheckCircleOutlineOutlinedIcon from '@material-ui/icons/CheckCircleOutlin
 import HighlightOffOutlinedIcon from '@material-ui/icons/HighlightOffOutlined';
 import './Todos.css';
 
-const Todos =({todo, dispatch, id, name, complete})=> {
+const Todos =({dispatch, id, name, complete})=> {
 
   
     return(
