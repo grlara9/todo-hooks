@@ -1,6 +1,5 @@
 html{
-  background-image: linear-gradient(#ec5151,#e76177);
-  background-repeat: no-repeat;
+ 
   height: 100%;
   background-size: auto;
   font-family: sans-serif;
@@ -22,7 +21,7 @@ form{
 }
 
 form input{
-  border: none;
+  
   color: black;
   width: 330px;
   height: 33px;
@@ -30,6 +29,10 @@ form input{
   outline: 0;
   background: #fff;
   padding: 1px;
+  border: 1px solid black;
+  
+  border-right: none;
+
 }
 ::-webkit-input-placeholder {
   color: black;
@@ -39,9 +42,10 @@ form input{
 button{
   font-size: 1.5em;
   background: #fff;
-  border:none;
+ border: 1px solid black;
+ border-left: none;
   outline: 0;
-  height: 35px;
+  height: 37px;
   width: 40px;
   
 }
